@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<title>add</title>
+</head>
+<body>
+<h2> add student </h2>
+
+{%  for student in S  %}
+    <p>  {{  student.Student_id  }} {{  student.Student_name  }}{{  student.gpa  }}  </p>
+{%  endfor  %}
+<form method="POST">
+    {% csrf_token %}
+    {{ form  }}
+    <button type="submit">Submit</button>
+</form>
+
+
+</body>
+</html>

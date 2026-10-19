@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<title>add</title>
+</head>
+<body>
+<h2> add course </h2>
+
+{%  for course in S  %}
+    <p>  {{  course.Student_id  }}<br> {{  course.Course_id  }} {{  course.Semester  }} {{  course.Number_of_credits  }} {{ course.Grade  }}
+        <a href="{% url 'delete_course' course.id %}">
+            <button type="button">Delete</button>
+        </a>  </p>
+{%  endfor  %}
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+
+
+</body>
+</html>
